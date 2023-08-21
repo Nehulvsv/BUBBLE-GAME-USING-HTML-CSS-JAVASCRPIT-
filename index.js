@@ -53,7 +53,7 @@ runHit()
 
 function reset(){
     timer = 60 ;
-    runTime();
+     document.querySelector("#times").textContent = timer;
     score = 0;
      document.querySelector("#scoreval").textContent = 0;
     makeBubbles()
