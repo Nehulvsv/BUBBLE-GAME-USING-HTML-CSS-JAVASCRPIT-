@@ -15,21 +15,22 @@ function gameover() {
     document.getElementById("end").style.visibility = "visible" ;
    
 }   
-var timer = 60;  
+var timer = 60; 
+var timerint = ""; 
 function runTime(){
-    var timerint = setInterval(function(){
+     timerint = setInterval(function(){
         if (timer > 0){
             timer--;
             document.querySelector("#times").textContent=timer;
         } else {
             clearInterval(timerint)
             document.querySelector("#bottom").innerHTML = "";
-            
             gameover();
         }
     },1000);
     
 }
+runTime()
 var numhit = 0 ;
 function runHit(){
     numhit= Math.floor(Math.random()*10) ;
@@ -47,13 +48,19 @@ document.querySelector("#bottom").addEventListener("click" , function(e){
         console.log("error");
     }
 });
-runTime()
 makeBubbles()
 runHit()
 
 function reset(){
-    timer = 60 ;
-     document.querySelector("#times").textContent = timer;
+    if(timer == 0){
+        timer = 60 
+        document.querySelector("#times").textContent=timer;
+         runTime()
+    }else{
+        timer = 60 ;
+         clearInterval(timerint);
+        runTime()
+    }
     score = 0;
      document.querySelector("#scoreval").textContent = 0;
     makeBubbles()
@@ -61,3 +68,4 @@ function reset(){
      document.getElementById("end").style.visibility = "hidden" ;
     
 }
+
