@@ -7,3 +7,6 @@ Players have 60 seconds to achieve the highest score possible by
 clicking on bubbles with numbers that match the target hit. 
 The game is built using HTML, CSS, and JavaScript technologies to 
 provide an engaging and responsive user experience.
+
+
+https://nehulvsv.github.io/BUBBLE-GAME-USING-HTML-CSS-JAVASCRPIT-/
